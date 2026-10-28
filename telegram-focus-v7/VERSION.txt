@@ -1,2 +1,0 @@
-v7-DEEP-UPGRADE - production-tayyor.
-DEPLOY.md va STATUS.md'ga qarang.

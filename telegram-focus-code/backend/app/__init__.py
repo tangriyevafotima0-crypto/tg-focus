@@ -1,1 +1,0 @@
-"""Telegram Focus backend application package."""

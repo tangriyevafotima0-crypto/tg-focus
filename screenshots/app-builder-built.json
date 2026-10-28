@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "FocusCorner",
+      "hasCanvas": false,
+      "bodyTextLen": 253,
+      "bodyTextHash": "a5b0eea82b13ee54b04a9f2a93eeb7687189c1f0ef8c6ffba91455fed54b3b65",
+      "bodyTextPrefix": "FocusCorner RULES Pinned · non-negotiable No social media Deep w",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "FocusCorner",
+      "hasCanvas": false,
+      "bodyTextLen": 253,
+      "bodyTextHash": "a5b0eea82b13ee54b04a9f2a93eeb7687189c1f0ef8c6ffba91455fed54b3b65",
+      "bodyTextPrefix": "FocusCorner RULES Pinned · non-negotiable No social media Deep w",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text replaced (similar length, page start changed)",
+    "mobile: body text replaced (similar length, page start changed)"
+  ]
+}

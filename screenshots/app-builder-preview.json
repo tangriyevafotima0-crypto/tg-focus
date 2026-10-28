@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "FocusCorner",
+      "hasCanvas": false,
+      "bodyTextLen": 269,
+      "bodyTextHash": "b1bee4ded520249979b25c16a08da8308fc40388c7870d160e376695fb47bf5c",
+      "bodyTextPrefix": "FocusCorner Wed Oct 7 04:25 RULES Pinned · non-negotiable No soc",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "FocusCorner",
+      "hasCanvas": false,
+      "bodyTextLen": 269,
+      "bodyTextHash": "b1bee4ded520249979b25c16a08da8308fc40388c7870d160e376695fb47bf5c",
+      "bodyTextPrefix": "FocusCorner Wed Oct 7 04:25 RULES Pinned · non-negotiable No soc",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
