@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kirish — Telegram Focus</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-card {
+    width: min(360px, calc(100% - 40px));
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 32px 28px;
+  }
+  .login-card h1 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: var(--text);
+  }
+  .login-card p {
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .login-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .login-card input[type="password"] {
+    width: 100%;
+    padding: 11px 13px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--panel-soft);
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .login-card input[type="password"]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .login-card button {
+    width: 100%;
+    padding: 12px 13px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent-strong);
+    color: #0d1016;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .login-card button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .login-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .login-error {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--red);
+    display: none;
+  }
+  .login-error.visible {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <form class="login-card" id="login-form" autocomplete="off">
+    <h1>Telegram Focus</h1>
+    <p>Davom etish uchun parolni kiriting.</p>
+    <label for="password">Parol</label>
+    <input type="password" id="password" name="password" autofocus required />
+    <button type="submit" id="login-btn">Kirish</button>
+    <div class="login-error" id="login-error">Noto'g'ri parol. Qayta urinib ko'ring.</div>
+  </form>
+
+  <script>
+    const CONFIGURED_API_BASE_URL = "http://<AWS_IP>:8000";
+    const API_BASE_URL =
+      window.location.protocol === "file:" ? CONFIGURED_API_BASE_URL : window.location.origin;
+
+    const form = document.getElementById("login-form");
+    const errorBox = document.getElementById("login-error");
+    const btn = document.getElementById("login-btn");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      errorBox.classList.remove("visible");
+      btn.disabled = true;
+      btn.textContent = "Tekshirilmoqda...";
+      const password = document.getElementById("password").value;
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ password }),
+        });
+        if (!response.ok) {
+          throw new Error("Noto'g'ri parol");
+        }
+        window.location.href = "/index.html";
+      } catch (err) {
+        errorBox.classList.add("visible");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Kirish";
+      }
+    });
+  </script>
+</body>
+</html>
